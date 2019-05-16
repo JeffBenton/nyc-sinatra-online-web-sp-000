@@ -32,11 +32,14 @@ class FiguresController < ApplicationController
     binding.pry
     figure = Figure.find(params[:id])
     figure.name = params[:figure][:name]
+    
     params[:title_ids] ? figure.titles = params[:title_ids] : figure.titles.clear
     figure.titles << Title.create(params[:title]) if !params[:title][:name].empty?
-    figure.landmarks.clear
     
+    params[:landmark_ids] ? figure.landmarks = params[:landmark_ids] : figure.landmarks.clear
+    figure.landmarks << Landmark.create(params[:landmark]) if !params[:landmark][:name].empty?
     
+    figure.save
     
     redirect "/figures/#{figure.id}"
   end
