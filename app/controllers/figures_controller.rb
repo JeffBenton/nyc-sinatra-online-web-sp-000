@@ -32,7 +32,8 @@ class FiguresController < ApplicationController
     binding.pry
     figure = Figure.find(params[:id])
     figure.name = params[:figure][:name]
-    figure.titles.clear
+    params[:title_ids] ? figure.titles = params[:title_ids] : figure.titles.clear
+    figure.titles << Title.create(params[:title]) if !params[:title][:name].empty?
     figure.landmarks.clear
     
     
