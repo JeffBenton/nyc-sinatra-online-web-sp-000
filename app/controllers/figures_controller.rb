@@ -32,7 +32,8 @@ class FiguresController < ApplicationController
     binding.pry
     figure = Figure.find(params[:id])
     figure.name = params[:figure][:name]
-    figure.
+    figure.titles.clear
+    figure.landmarks.clear
     
     redirect "/figures/#{figure.id}"
   end
