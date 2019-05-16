@@ -29,7 +29,6 @@ class FiguresController < ApplicationController
   end
   
   post '/figures/:id/edit' do
-    binding.pry
     figure = Figure.find(params[:id])
     figure.name = params[:figure][:name]
     
