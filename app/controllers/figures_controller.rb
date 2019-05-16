@@ -30,7 +30,8 @@ class FiguresController < ApplicationController
   
   post '/figures/:id/edit' do
     binding.pry
-    
+    figure = Figure.find(params[:id])
+    figure.name = params[:figure]
     
     redirect "/figures/#{figure.id}"
   end
