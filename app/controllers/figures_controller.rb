@@ -30,6 +30,8 @@ class FiguresController < ApplicationController
   
   post '/figures/:id/edit' do
     binding.pry
+    
+    
     redirect "/figures/#{figure.id}"
   end
 end
