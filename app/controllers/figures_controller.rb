@@ -18,11 +18,6 @@ class FiguresController < ApplicationController
     redirect '/figures'
   end
   
-  post '/figures/edit' do
-    binding.pry
-    redirect "/figures/#{figure.id}"
-  end
-  
   get '/figures/:id' do
     @figure = Figure.find(params[:id])
     erb :'/figures/show'
@@ -31,5 +26,10 @@ class FiguresController < ApplicationController
   get '/figures/:id/edit' do
     @figure = Figure.find(params[:id])
     erb :'/figures/edit'
+  end
+  
+  post '/figures/:id/edit' do
+    binding.pry
+    redirect "/figures/#{figure.id}"
   end
 end
