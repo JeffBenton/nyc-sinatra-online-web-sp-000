@@ -1,5 +1,5 @@
 <form method="post" action="/figures/edit">
-  Name: <input type="text" name="figure[name]" id="figure_name" value="<%= figure.name %>">
+  Name: <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>">
   
   <h2>Titles</h2>
   <% Title.all.each do |title| %>
