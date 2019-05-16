@@ -35,6 +35,8 @@ class FiguresController < ApplicationController
     figure.titles.clear
     figure.landmarks.clear
     
+    
+    
     redirect "/figures/#{figure.id}"
   end
 end
